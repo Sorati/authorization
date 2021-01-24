@@ -4,13 +4,15 @@ import './App.scss';
 
 import NotFound from "../not-found/not-found";
 import Main from "../main/main";
+import PrivateRoute from "../private-route";
 
 function App() {
     return (
         <Router>
             <div className="App">
                 <Switch>
-                    <Route exact path={'/'} component={Main}/>
+                    <PrivateRoute exact path={'/'} component={Main}/>
+                    {/*<Route exact path={'/'} component={Main}/>*/}
                     <Route path={'/404'} component={NotFound}/>
                     <Redirect to={'/404'}/>
                 </Switch>
